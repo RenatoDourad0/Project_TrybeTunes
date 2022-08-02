@@ -26,7 +26,7 @@ export default class Header extends React.Component {
           ? (
             <div>
               <h1>Header</h1>
-              <span data-testid="header-user-name">{ userName.name }</span>
+              <span data-testid="header-user-name">{ `Ola ${userName.name}` }</span>
               <nav>
                 <Link to="/search" data-testid="link-to-search">Buscar</Link>
                 <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>

@@ -25,8 +25,8 @@ class App extends React.Component {
             <Route path="/search" component={ Search } />
             <Route path="/album/:id" component={ Album } />
             <Route path="/favorites" component={ favorites } />
-            <Route path="/profile" component={ Profile } />
-            <Route path="/profile/edit" component={ ProfileEdit } />
+            <Route exact path="/profile" component={ Profile } />
+            <Route exact path="/profile/edit" component={ ProfileEdit } />
             <Route component={ NotFound } />
           </Switch>
         </BrowserRouter>
