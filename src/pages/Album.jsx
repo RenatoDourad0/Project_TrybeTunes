@@ -4,12 +4,15 @@ import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
 import MusicCard from '../components/MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 export default class Album extends React.Component {
   constructor() {
     super();
     this.state = {
       data: undefined,
+      loadingState: true,
+      favorites: [],
     };
   }
 
@@ -18,15 +21,22 @@ export default class Album extends React.Component {
     const data = await getMusics(id);
     this.setState({
       data,
+    }, async () => {
+      const favoriteSongs = await getFavoriteSongs();
+      this.setState({
+        loadingState: false,
+        favorites: favoriteSongs,
+      });
     });
   }
 
   render() {
-    const { data } = this.state;
+    const { data, loadingState, favorites } = this.state;
+    console.log(favorites);
     return (
       <div data-testid="page-album">
         <Header />
-        { data
+        { !loadingState
           ? (
             <div>
               <h1 data-testid="album-name">{ data[0].collectionName }</h1>
@@ -40,6 +50,8 @@ export default class Album extends React.Component {
                     trackName={ music.trackName }
                     trackId={ music.trackId }
                     fullMusicData={ music }
+                    favorite={ favorites
+                      .some((favMusic) => favMusic.trackId === music.trackId) }
                   />))}
             </div>
           )

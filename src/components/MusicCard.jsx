@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { addSong } from '../services/favoriteSongsAPI';
+import { addSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
 
 export default class MusicCard extends React.Component {
@@ -11,6 +11,13 @@ export default class MusicCard extends React.Component {
       isChecked: false,
     };
     this.handleClick = this.handleClick.bind(this);
+  }
+
+  componentDidMount() {
+    const { favorite } = this.props;
+    this.setState({
+      isChecked: favorite,
+    });
   }
 
   handleClick(fullMusicData) {
@@ -64,4 +71,5 @@ MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   trackId: PropTypes.number.isRequired,
   fullMusicData: PropTypes.objectOf(PropTypes.string, PropTypes.number).isRequired,
+  favorite: PropTypes.bool.isRequired,
 };
