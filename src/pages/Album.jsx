@@ -32,7 +32,6 @@ export default class Album extends React.Component {
 
   render() {
     const { data, loadingState, favorites } = this.state;
-    console.log(favorites);
     return (
       <div data-testid="page-album">
         <Header />

@@ -18,6 +18,12 @@ export default class Header extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.setState({
+      userName: undefined,
+    });
+  }
+
   render() {
     const { userName } = this.state;
     return (
