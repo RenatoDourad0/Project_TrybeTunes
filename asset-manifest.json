@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/Project_TrybeTunes/static/css/main.67b65966.css",
-    "main.js": "/Project_TrybeTunes/static/js/main.46d3930d.js",
-    "index.html": "/Project_TrybeTunes/index.html",
-    "main.67b65966.css.map": "/Project_TrybeTunes/static/css/main.67b65966.css.map",
-    "main.46d3930d.js.map": "/Project_TrybeTunes/static/js/main.46d3930d.js.map"
+    "main.css": "/app-toot-name/static/css/main.67b65966.css",
+    "main.js": "/app-toot-name/static/js/main.46d3930d.js",
+    "index.html": "/app-toot-name/index.html",
+    "main.67b65966.css.map": "/app-toot-name/static/css/main.67b65966.css.map",
+    "main.46d3930d.js.map": "/app-toot-name/static/js/main.46d3930d.js.map"
   },
   "entrypoints": [
     "static/css/main.67b65966.css",
