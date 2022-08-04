@@ -13,22 +13,27 @@
 
 ### The project
 
-In this project I developed a functional card game where the user can add and remove customised cards, view the full deck and play.
+In this project I developed a single page aplication using React, it is called TrybeTunes and is capable of playing songs from the most varied bands and artists, creating a list of favorite songs and editing the profile of the user logged in. Some of it's main features are:
+
+- Login
+- Search for a band or artist
+- List available albums by that band or artist
+- View songs from a selected album
+- Play a preview of the songs on this album
+- Favorite and unfavorite songs
+- View the list of favorite songs
+- See the profile of the person logged in
+- Edit the profile of the person logged in
 
 The main habilities practiced here were:
 
-- stateFull and controled components
-
-- Render components based on it's state
-
-- Update components state
-
-- Capture events with React syntax
-
-- Develop forms using JSX syntax
-
-- Pass information from child components to its parent through callBacks
-
+- Make requests and consume data from an API
+- Use the lifecycle methods of a React component
+- Use the setState function to ensure that a given code is only executed after the state is updated
+- Use the BrowserRouter component correctly
+- Create routes, mapping the URL path with the corresponding component, via Route
+- Using the React Router Switch
+- Create navigation links in the application with the Link component
 
 ### Screenshot
 
@@ -37,12 +42,12 @@ The main habilities practiced here were:
 
 ### Links
 
-- Solution URL: [Github](https://github.com/RenatoDourad0/Project_Tryunfo_Trybe)
-- [Live site](https://renatodourad0.github.io/Project_Tryunfo_Trybe/)
+- Solution URL: [Github](https://github.com/RenatoDourad0/Project_TrybeTunes)
+- [Live site](https://renatodourad0.github.io/Project_TrybeTunes)
 
 ## My process
 
-This project was a opportunity to practice and consolidade my knowledge on React structure, especially for class and stateful components.
+This project was a opportunity to practice and consolidade my knowledge on React, especially with its components live Cicle methods and react-router.
 
 ### Built with
 
