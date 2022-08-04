@@ -22,7 +22,7 @@ class App extends React.Component {
             <Route exact path="/profile" component={ Profile } />
             <Route
               exact
-              path="/Project_TrybeTunes/profile/edit"
+              path="/profile/edit"
               component={ ProfileEdit }
             />
             <Route component={ NotFound } />
