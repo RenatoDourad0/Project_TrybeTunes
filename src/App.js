@@ -10,12 +10,6 @@ import NotFound from './pages/NotFound';
 import './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-
-    };
-  }
 
   render() {
     return (
