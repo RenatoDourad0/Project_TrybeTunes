@@ -16,10 +16,10 @@ class App extends React.Component {
         <BrowserRouter>
           <Switch>
             <Route exact path="/Project_TrybeTunes" component={ Login } />
-            <Route path="/Project_TrybeTunes/search" component={ Search } />
-            <Route path="/Project_TrybeTunes/album/:id" component={ Album } />
-            <Route path="/Project_TrybeTunes/favorites" component={ favorites } />
-            <Route exact path="/Project_TrybeTunes/profile" component={ Profile } />
+            <Route path="/search" component={ Search } />
+            <Route path="/album/:id" component={ Album } />
+            <Route path="/favorites" component={ favorites } />
+            <Route exact path="/profile" component={ Profile } />
             <Route
               exact
               path="/Project_TrybeTunes/profile/edit"
