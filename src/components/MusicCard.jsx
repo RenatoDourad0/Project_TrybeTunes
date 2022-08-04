@@ -43,18 +43,23 @@ export default class MusicCard extends React.Component {
     return (
       !savingState
         ? (
-          <div>
-            <span>
+          <div className="musicCardContainer">
+            <span className="musicCardTrackName">
               { trackName }
             </span>
-            <audio data-testid="audio-component" src={ previewUrl } controls>
+            <audio
+              data-testid="audio-component"
+              src={ previewUrl }
+              controls
+              className="musicCardAudio"
+            >
               <track kind="captions" />
               O seu navegador não suporta o elemento
               {' '}
               <code>audio</code>
               .
             </audio>
-            <label htmlFor="isFavouriteInput">
+            <label htmlFor="isFavouriteInput" className="musicCardFavoriteLabel">
               Favorita
               <input
                 type="checkbox"
@@ -62,6 +67,7 @@ export default class MusicCard extends React.Component {
                 data-testid={ `checkbox-music-${trackId}` }
                 onChange={ () => this.handleClick(fullMusicData) }
                 checked={ isChecked }
+                className="musicCardFavoriteInput"
               />
             </label>
           </div>

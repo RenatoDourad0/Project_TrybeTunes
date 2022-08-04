@@ -27,16 +27,39 @@ export default class Header extends React.Component {
   render() {
     const { userName } = this.state;
     return (
-      <header data-testid="header-component">
+      <header data-testid="header-component" className="headerContainer">
         { userName !== undefined
           ? (
             <div>
-              <h1>Header</h1>
-              <span data-testid="header-user-name">{ `Ola ${userName.name}` }</span>
-              <nav>
-                <Link to="/search" data-testid="link-to-search">Buscar</Link>
-                <Link to="/favorites" data-testid="link-to-favorites">Favoritos</Link>
-                <Link to="/profile" data-testid="link-to-profile">Perfil</Link>
+              <h1 className="headerTitle">TrybeTunes</h1>
+              <span
+                data-testid="header-user-name"
+                className="headerUsername"
+              >
+                { `Olá ${userName.name}` }
+              </span>
+              <nav className="headerNav">
+                <Link
+                  to="/search"
+                  data-testid="link-to-search"
+                  className="headerLink"
+                >
+                  Buscar
+                </Link>
+                <Link
+                  to="/favorites"
+                  data-testid="link-to-favorites"
+                  className="headerLink"
+                >
+                  Favoritos
+                </Link>
+                <Link
+                  to="/profile"
+                  data-testid="link-to-profile"
+                  className="headerLink"
+                >
+                  Perfil
+                </Link>
               </nav>
             </div>
           )

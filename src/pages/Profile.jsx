@@ -30,17 +30,29 @@ export default class Profile extends React.Component {
           ? <Loading />
           : (
             <div data-testid="page-profile">
-              <div>
+              <div className="profileContainer">
                 <img
                   data-testid="profile-image"
                   src={ userData.image }
                   alt={ userData.name }
+                  className="profileImg"
                 />
-                <h2>{ userData.name }</h2>
-                <h2>{ userData.name }</h2>
-                <h3>{ userData.email }</h3>
-                <h3>{ userData.description }</h3>
-                <Link to="/profile/edit">Editar perfil</Link>
+                <div className="profileInfo">
+                  <h3>Nome:</h3>
+                  <h2 className="profileName">{ userData.name }</h2>
+                  <br />
+                  <h3>Email:</h3>
+                  <h3 className="profileEmail">{ userData.email }</h3>
+                  <br />
+                  <h3>Descrição:</h3>
+                  <h3 className="profileDescription">{ userData.description }</h3>
+                </div>
+                <Link
+                  to="/profile/edit"
+                  className="profileLink"
+                >
+                  Editar perfil
+                </Link>
               </div>
             </div>)}
       </div>

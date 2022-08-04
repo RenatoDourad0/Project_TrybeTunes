@@ -31,7 +31,7 @@ export default class Search extends React.Component {
       const data = await searchAlbumsAPI(artistName);
       this.setState((prev) => ({
         LoadingState: !prev.LoadingState,
-        requestReturned: !prev.requestReturned,
+        requestReturned: true,
         Data: data,
       }));
     });
@@ -60,16 +60,15 @@ export default class Search extends React.Component {
       inputValue,
       Data } = this.state;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className="searchPageContainer">
         <Header />
         { LoadingState
           ? (
             <Loading />
           )
           : (
-            <form action="">
-              <label htmlFor="artistSearchInput">
-                Busque pelo artista:
+            <form action="" className="searchForm">
+              <label htmlFor="artistSearchInput" className="searchInputLabel">
                 <input
                   type="text"
                   name="artistSearchInput"
@@ -77,6 +76,8 @@ export default class Search extends React.Component {
                   data-testid="search-artist-input"
                   value={ inputValue }
                   onChange={ this.handleChange }
+                  className="searchInput"
+                  placeholder="   Busque pelo nome do artista"
                 />
               </label>
               <button
@@ -84,6 +85,7 @@ export default class Search extends React.Component {
                 data-testid="search-artist-button"
                 onClick={ this.handleClick }
                 disabled={ buttonDisabled }
+                className="searchInputButton"
               >
                 Pesquisar
               </button>
@@ -91,28 +93,36 @@ export default class Search extends React.Component {
           )}
         { requestReturned
         && (
-          <h2>
+          <h2 className="searchResultText">
             { `Resultado de álbuns de: ${artistName}` }
           </h2>
         )}
         {
-          Data.length === 0 && <h4>Nenhum álbum foi encontrado</h4>
+          Data.length === 0 && requestReturned
+            && <h4 className="albumNotFound">Nenhum álbum foi encontrado</h4>
         }
-        {
-          Data.length > 0 && Data.map((album) => (
-            <div key={ album.collectionId }>
-              <img src={ album.artworkUrl100 } alt={ album.collectionName } />
-              <h4>{ album.collectionName }</h4>
-              <h6>{ album.artistName }</h6>
-              <Link
-                to={ `/album/${album.collectionId}` }
-                data-testid={ `link-to-album-${album.collectionId}` }
-              >
-                Mais informações
-              </Link>
-            </div>
-          ))
-        }
+        <div className="searchCardsContainer">
+          {
+            Data.length > 0 && Data.map((album) => (
+              <div key={ album.collectionId } className="searchAlbumContainer">
+                <img
+                  src={ album.artworkUrl100 }
+                  alt={ album.collectionName }
+                  className="searchAlbumImage"
+                />
+                <h4 className="searchAlbumName">{ album.collectionName }</h4>
+                <h6 className="searchAlbumArtist">{ album.artistName }</h6>
+                <Link
+                  to={ `/album/${album.collectionId}` }
+                  data-testid={ `link-to-album-${album.collectionId}` }
+                  className="searchAlbumLink"
+                >
+                  Mais informações
+                </Link>
+              </div>
+            ))
+          }
+        </div>
       </div>
     );
   }

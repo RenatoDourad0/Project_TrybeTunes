@@ -51,10 +51,10 @@ export default class Login extends React.Component {
     return (
       !LoadingState
         ? (
-          <div data-testid="page-login">
-            <form action="">
-              <label htmlFor="userName">
-                Usuário:
+          <div data-testid="page-login" className="loginFormContainer">
+            <h1 className="title">TrybeTunes</h1>
+            <form action="" className="loginForm">
+              <label htmlFor="userName" className="loginInputLabel">
                 <input
                   type="text"
                   name="userName"
@@ -62,6 +62,8 @@ export default class Login extends React.Component {
                   data-testid="login-name-input"
                   value={ userNameInputValue }
                   onChange={ this.handleChange }
+                  className="loginInput"
+                  placeholder="   Usuário"
                 />
               </label>
               <button
@@ -69,6 +71,7 @@ export default class Login extends React.Component {
                 disabled={ buttonDisabled }
                 data-testid="login-submit-button"
                 onClick={ this.handleClick }
+                className="loginButton"
               >
                 Entrar
               </button>

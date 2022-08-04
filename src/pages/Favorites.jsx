@@ -23,19 +23,18 @@ export default class favorites extends React.Component {
   }
 
   async shouldComponentUpdate() {
-    const favoriteSongs = await getFavoriteSongs();
-    const { favoriteSongs: prevFavorites } = this.state;
-    if (favoriteSongs !== prevFavorites) {
-      this.forceUpdate();
-    }
-    return favoriteSongs !== prevFavorites;
+    // const favoriteSongs = await getFavoriteSongs();
+    // const { favoriteSongs: prevFavorites } = this.state;
+    // if (favoriteSongs !== prevFavorites) {
+    //   this.forceUpdate();
+    // }
+    // return favoriteSongs !== prevFavorites;
   }
 
-  // parece que cria um looping infinito.
+  // cria um looping infinito. precisa renderizar a lista novamente apos atualizar
 
   async componentDidUpdate() {
-    const favSongs = await getFavoriteSongs();
-    console.log('aqui', favSongs);
+    // const favSongs = await getFavoriteSongs();
     // this.setState({
     //   loadingState: true,
     // }, () => {
@@ -54,14 +53,21 @@ export default class favorites extends React.Component {
         : (
           <div data-testid="page-favorites">
             <Header />
-            { favoriteSongs.map((song) => (<MusicCard
-              key={ song.trackId }
-              previewUrl={ song.previewUrl }
-              trackName={ song.trackName }
-              fullMusicData={ song }
-              trackId={ song.trackId }
-              favorite={ favorite }
-            />)) }
+            <div className="favoritesContainer">
+              <hr className="AlbumMusicCardHr" />
+              { favoriteSongs.map((song) => (
+                <div key={ song.trackId }>
+                  <MusicCard
+                    previewUrl={ song.previewUrl }
+                    trackName={ song.trackName }
+                    fullMusicData={ song }
+                    trackId={ song.trackId }
+                    favorite={ favorite }
+                  />
+                  <hr className="AlbumMusicCardHr" />
+                </div>
+              )) }
+            </div>
           </div>)
     );
   }

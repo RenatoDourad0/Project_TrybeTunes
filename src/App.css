@@ -1,0 +1,435 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: rgba(229, 229, 229, 0.553);
+}
+
+.loading {
+  text-align: center;
+}
+
+.title {
+  position: absolute;
+  top: 12vh;
+  right: 45vw;
+}
+
+.loginFormContainer {
+  width: 50vw;
+  height: 30vh;
+  margin: auto;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 5px gray;
+  margin-top: 20vh;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.loginInputLabel {
+  width: 60%;
+  margin: auto;
+  margin-top: 80px;
+}
+
+.loginInput {
+  width: 100%;
+  padding: 5px 5px;
+  border: 1px solid rgb(189, 188, 188);
+  border-radius: 10px;
+}
+
+.loginButton {
+  width: 60%;
+  padding: 5px 0;
+  margin: auto;
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.loginButton:hover {
+  cursor: pointer;
+}
+
+/* FIM LOGIN  */
+
+.headerContainer {
+  position: relative;
+  width: 100vw;
+  height: 12vh;
+  background-color: rgb(60, 95, 81);
+}
+
+.headerTitle {
+  position: absolute;
+  left: 30px;
+  top: 20%;
+  color: rgb(233, 233, 233);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.headerUsername {
+  position: absolute;
+  right: 30px;
+  top: 20%;
+  padding: 10px 30px;
+  background-color:  rgb(233, 233, 233);
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.headerNav {
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  width: 100vw;
+  padding: 10px 0;
+  background-color: rgb(90, 134, 88);
+  text-align: center;
+}
+
+.headerLink {
+  display: inline-block;
+  width: 33vw;
+  line-height: 100%;
+  text-decoration: none;
+  color: white;
+  font-weight: 700;
+}
+
+.headerLink:hover {
+  color: rgb(71, 186, 75);
+}
+
+/* FIM HEADER */
+
+.searchPageContainer {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.searchForm {
+  width: 50vw;
+  height: 5vh;
+  margin: auto;
+  display: flex;
+  margin-top: 5vh;
+}
+
+.searchInputLabel {
+  width: 70%;
+  margin: auto;
+}
+
+.searchInput {
+  width: 100%;
+  height: 30px;
+  padding: 5px 0;
+  border: 1px solid rgb(189, 188, 188);
+  border-radius: 5px;
+}
+
+.searchInputButton {
+  width: 20%;
+  height: 30px;
+  padding: 6px 0;
+  margin: auto;
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+}
+
+.searchInputButton:hover {
+  cursor: pointer
+}
+
+/* FIM SEARCH FORM  */
+
+.searchResultText {
+  margin-left: 50px;
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+.albumNotFound {
+  width: 100vw;
+  margin-top: 10%;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.searchCardsContainer {
+  display: flex;
+  max-width: 80vw;
+  margin: auto;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.searchAlbumContainer {
+  position: relative;
+  width: 20%;
+  height: max-content;
+  min-height: 350px;
+  border: 1px solid rgb(189, 188, 188);
+  border-radius: 10px;
+}
+
+.searchAlbumImage {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.searchAlbumName {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-weight: 700;
+}
+
+.searchAlbumArtist {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.searchAlbumLink {
+  position: absolute;
+  bottom: 10px;
+  margin-left: 10px;
+  text-decoration: underline;
+  color: black;
+}
+
+.searchAlbumLink:hover {
+  cursor: pointer;
+}
+
+/* FIM SEARCH ALBUNS  */
+
+.albumPageContainer {
+  padding-bottom: 50px;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.albumContainer {
+  display: flex;
+  width: 95vw;
+  margin: auto;
+  gap: 100px;
+  margin-top: 5vh;
+}
+
+.albumInfoContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.albumTitle {
+  margin-top: 20px;
+  max-width: 300px;
+}
+
+.albumArtistName {
+  max-width: 300px;
+}
+
+.albumImg {
+  max-width: 300px;
+}
+
+.albumMusicCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+}
+
+.albumMusicCardInnerContainer {
+  min-height: 80px;
+}
+
+.albumMusicCard {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.AlbumMusicCardHr {
+  border: 1px solid rgba(189, 188, 188, 0.536);
+}
+
+/* FIM ALBUM INFO */
+
+.musicCardContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 40px;
+}
+
+.musicCardTrackName {
+  justify-self: flex-start;
+  font-weight: 600;
+}
+
+.musicCardAudio {
+  max-width: 40%;
+}
+
+.musicCardFavoriteLabel {
+  margin-right: 50px;
+  font-weight: 600;
+}
+
+/* FIM MUSIC CARD */
+
+.favoritesContainer{
+  width: 60vw;
+  margin: auto;
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* FIM FAVORITES  */
+
+.profileContainer {
+  position: relative;
+  width: 40vw;
+  min-height: 50vh;
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px;
+  border: 1px solid rgba(189, 188, 188, 0.536);
+  border-radius: 10px;
+}
+
+.profileInfo {
+  position: absolute;
+  width: 20vw;
+  top: 40%;
+  left: 55px;
+}
+
+.profileImg {
+  min-width: 120px;
+  width: 120px;
+  min-height: 120px;
+  height: 120px;
+  border-radius: 200px;
+  background-color: gray;
+  overflow: hidden;
+  text-align: center;
+}
+.profileName {
+  font-size: 16px;
+}
+
+.profileEmail {
+  font-size: 16px;
+}
+
+.profileDescription {
+  font-size: 16px;
+}
+
+.profileLink {
+  position: absolute;
+  right: 80px;
+  top: 90px;
+  padding: 10px 20px;
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* FIM PROFILE INFO */ 
+
+.editProfileFormContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: auto;
+  margin-top: 100px;
+  padding: 50px;
+  border: 1px solid rgba(189, 188, 188, 0.536);
+  border-radius: 10px;
+}
+
+.editProfileImg {
+  position: absolute;
+  right: 100px;
+  min-width: 100px;
+  width: 100px;
+  min-height: 100px;
+  height: 100px;
+  border-radius: 200px;
+  background-color: gray;
+  overflow: hidden;
+  text-align: center;
+}
+
+.editProfileinput {
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid black;
+  margin-top: 5px;
+}
+
+.editProfileButton {
+  width: 30%;
+  margin: auto;
+  margin-top: 20px;
+  color: black;
+  font-weight: 700;
+}
+
+.editProfileButton:hover {
+  cursor: pointer;
+}
+
+.editProfileButton:enabled {
+  background-color: blue;
+  color: white;
+  font-weight: 700;
+}

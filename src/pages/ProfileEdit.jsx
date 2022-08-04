@@ -43,7 +43,7 @@ export default class ProfileEdit extends React.Component {
       const em = email.length > 0;
       const im = image.length > 0;
       const desc = description.length > 0;
-      const exp = email.match(/./); // fazer validacao do formato do email com regex
+      const exp = email.includes('@');
       if (nm && em && im && desc && exp) {
         this.setState({
           isDisabled: false,
@@ -87,26 +87,50 @@ export default class ProfileEdit extends React.Component {
           )
           : (
             <div data-testid="page-profile-edit">
-              <form action="">
+              <form action="" className="editProfileFormContainer">
+                <img src={ image } alt={ name } className="editProfileImg" />
+                <label htmlFor="image">
+                  URL da imagem
+                  <br />
+                  <input
+                    data-testid="edit-input-image"
+                    type="text"
+                    name="image"
+                    value={ image }
+                    onChange={ this.handleChange }
+                    className="editProfileinput"
+                  />
+                </label>
+                <br />
                 <label htmlFor="name">
+                  Nome
+                  <br />
                   <input
                     data-testid="edit-input-name"
                     type="text"
                     name="name"
                     value={ name }
                     onChange={ this.handleChange }
+                    className="editProfileinput"
                   />
                 </label>
+                <br />
                 <label htmlFor="email">
+                  Email
+                  <br />
                   <input
                     data-testid="edit-input-email"
                     type="text"
                     name="email"
                     value={ email }
                     onChange={ this.handleChange }
+                    className="editProfileinput"
                   />
                 </label>
+                <br />
                 <label htmlFor="description">
+                  Descrição
+                  <br />
                   <textarea
                     data-testid="edit-input-description"
                     name="description"
@@ -114,15 +138,7 @@ export default class ProfileEdit extends React.Component {
                     rows="10"
                     value={ description }
                     onChange={ this.handleChange }
-                  />
-                </label>
-                <label htmlFor="image">
-                  <input
-                    data-testid="edit-input-image"
-                    type="text"
-                    name="image"
-                    value={ image }
-                    onChange={ this.handleChange }
+                    className="editProfileinput"
                   />
                 </label>
                 <button
@@ -130,6 +146,7 @@ export default class ProfileEdit extends React.Component {
                   data-testid="edit-button-save"
                   onClick={ this.handleClick }
                   disabled={ isDisabled }
+                  className="editProfileButton"
                 >
                   Salvar
                 </button>
