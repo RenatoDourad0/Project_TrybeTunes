@@ -42,14 +42,12 @@ export default class Header extends React.Component {
             <div>
               { redirect && <Redirect to="/Project_TrybeTunes" /> }
               <label htmlFor="redirectButton">
-                <button
+                <input
                   type="button"
                   name="redirectButton"
                   id="redirectButton"
                   onClick={ this.redirectToMain }
-                >
-                  .
-                </button>
+                />
                 <h1
                   className="headerTitle"
                 >
