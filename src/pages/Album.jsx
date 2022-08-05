@@ -73,7 +73,12 @@ export default class Album extends React.Component {
               </div>
             </div>
           )
-          : (<Loading />)}
+          : (
+            <div>
+              <br />
+              <Loading />
+            </div>
+          )}
       </div>
     );
   }

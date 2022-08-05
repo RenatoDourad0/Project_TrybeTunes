@@ -99,7 +99,7 @@ export default class ProfileEdit extends React.Component {
                       src={ image }
                       alt=" "
                     />)
-                  : <FaUserCircle className="profileUserImage" /> }
+                  : <FaUserCircle className="profileEditUserImage" /> }
                 <label htmlFor="image">
                   URL da imagem
                   <br />

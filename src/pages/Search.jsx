@@ -64,7 +64,10 @@ export default class Search extends React.Component {
         <Header />
         { LoadingState
           ? (
-            <Loading />
+            <div>
+              <br />
+              <Loading />
+            </div>
           )
           : (
             <form action="" className="searchForm">

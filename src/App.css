@@ -418,12 +418,20 @@ body {
 
 /* FIM FAVORITES  */
 
-.profileUserImage {
+.profileEditUserImage {
   position: absolute;
   width: 80px;
   height: 80px;
   top: 50px;
   right: 80px;
+}
+
+.profileUserImage {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50px;
+  left: 55px;
 }
 
 .profileContainer {
