@@ -1,4 +1,5 @@
 import React from 'react';
+import { GiMusicalNotes } from 'react-icons/gi';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
 import Loading from '../components/Loading';
@@ -51,32 +52,38 @@ export default class Login extends React.Component {
     return (
       !LoadingState
         ? (
-          <div data-testid="page-login" className="loginFormContainer">
-            <h1 className="title">TrybeTunes</h1>
-            <form action="" className="loginForm">
-              <label htmlFor="userName" className="loginInputLabel">
-                <input
-                  type="text"
-                  name="userName"
-                  id=""
-                  data-testid="login-name-input"
-                  value={ userNameInputValue }
-                  onChange={ this.handleChange }
-                  className="loginInput"
-                  placeholder="   Usuário"
-                />
-              </label>
-              <button
-                type="button"
-                disabled={ buttonDisabled }
-                data-testid="login-submit-button"
-                onClick={ this.handleClick }
-                className="loginButton"
-              >
-                Entrar
-              </button>
-            </form>
-            { isLogedIn && <Redirect to="/search" /> }
+          <div>
+            <div className="titleContainer">
+              <GiMusicalNotes className="notes" />
+              <h1 className="title">TrybeTunes</h1>
+              <GiMusicalNotes className="notes" />
+            </div>
+            <div data-testid="page-login" className="loginFormContainer">
+              <form action="" className="loginForm">
+                <label htmlFor="userName" className="loginInputLabel">
+                  <input
+                    type="text"
+                    name="userName"
+                    id=""
+                    data-testid="login-name-input"
+                    value={ userNameInputValue }
+                    onChange={ this.handleChange }
+                    className="loginInput"
+                    placeholder="   Usuário"
+                  />
+                </label>
+                <button
+                  type="button"
+                  disabled={ buttonDisabled }
+                  data-testid="login-submit-button"
+                  onClick={ this.handleClick }
+                  className="loginButton"
+                >
+                  Entrar
+                </button>
+              </form>
+              { isLogedIn && <Redirect to="/search" /> }
+            </div>
           </div>)
         : <Loading />
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser } from '../services/userAPI';
@@ -27,16 +28,23 @@ export default class Profile extends React.Component {
       <div>
         <Header />
         { loadingState
-          ? <Loading />
+          ? (
+            <div>
+              <br />
+              <Loading />
+            </div>
+          )
           : (
             <div data-testid="page-profile">
               <div className="profileContainer">
-                <img
-                  data-testid="profile-image"
-                  src={ userData.image }
-                  alt={ userData.name }
-                  className="profileImg"
-                />
+                { userData.image
+                  ? (
+                    <img
+                      className="profileImg uploadedImg"
+                      src={ userData.image }
+                      alt=" "
+                    />)
+                  : <FaUserCircle className="profileUserImage" /> }
                 <div className="profileInfo">
                   <h3>Nome:</h3>
                   <h2 className="profileName">{ userData.name }</h2>

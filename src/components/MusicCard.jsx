@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaHeart } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { addSong, removeSong } from '../services/favoriteSongsAPI';
 import Loading from './Loading';
@@ -59,16 +60,20 @@ export default class MusicCard extends React.Component {
               <code>audio</code>
               .
             </audio>
-            <label htmlFor="isFavouriteInput" className="musicCardFavoriteLabel">
-              Favorita
+            <label
+              htmlFor={ `isFavouriteInput-${trackId}` }
+              className="musicCardFavoriteLabel"
+            >
               <input
                 type="checkbox"
                 name="isFavouriteInput"
+                id={ `isFavouriteInput-${trackId}` }
                 data-testid={ `checkbox-music-${trackId}` }
                 onChange={ () => this.handleClick(fullMusicData) }
                 checked={ isChecked }
                 className="musicCardFavoriteInput"
               />
+              <FaHeart className="favoriteHeard" />
             </label>
           </div>
         )

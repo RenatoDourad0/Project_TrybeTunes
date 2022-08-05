@@ -1,11 +1,10 @@
 import React from 'react';
+import { FiLoader } from 'react-icons/fi';
 
 export default class Loading extends React.Component {
   render() {
     return (
-      <div className="loading">
-        <h1>Carregando...</h1>
-      </div>
+      <FiLoader className="loading" />
     );
   }
 }

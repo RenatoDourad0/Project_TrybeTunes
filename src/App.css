@@ -27,13 +27,59 @@ body {
 }
 
 .loading {
-  text-align: center;
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  animation: loadingAnimation 3s linear infinite;
+}
+
+.headerLoading .loading {
+  filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(205deg) brightness(109%) contrast(101%);
+}
+
+@keyframes loadingAnimation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.titleContainer {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  margin-top: 10vh;
+}
+
+.notes {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  margin: 0 20px;
 }
 
 .title {
-  position: absolute;
-  top: 12vh;
-  right: 45vw;
+  display: inline-block;
+  font-size: 50px;
+  font-weight: 700;
+  background-image: linear-gradient(to right, rgb(77, 104, 93), rgb(90, 134, 88), rgb(120, 186, 59), rgb(167, 181, 60), rgb(90, 134, 88), rgb(77, 104, 93) );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  background-position: -100%;
+  animation: titleAnimation 2.5s infinite alternate-reverse;
+}
+
+@keyframes titleAnimation {
+  from{
+    background-position: 0%;
+  }
+  to{
+    background-position: 100%;
+  }
 }
 
 .loginFormContainer {
@@ -89,22 +135,56 @@ body {
   background-color: rgb(60, 95, 81);
 }
 
+#redirectButton {
+  visibility: hidden;
+}
+
 .headerTitle {
   position: absolute;
+  font-size: 40px;
   left: 30px;
-  top: 20%;
+  top: 15%;
   color: rgb(233, 233, 233);
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background-image: linear-gradient(to right, rgb(167, 179, 91), rgb(74, 186, 59), rgb(167, 179, 91),rgb(74, 186, 59));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 200%;
+  background-position: -100%;
+  animation: titleAnimation 2.5s infinite alternate;
+}
+
+.headerTitle:hover {
+  cursor: pointer;
+}
+
+.userConatiner {
+  position: relative;
+  width: 180px;
+  height: 40px;
+  margin-left: 80%;
+  padding: 10px 30px;
+  background-color:  rgb(233, 233, 233);
+  border-radius: 10px;
 }
 
 .headerUsername {
   position: absolute;
-  right: 30px;
-  top: 20%;
-  padding: 10px 30px;
-  background-color:  rgb(233, 233, 233);
-  border-radius: 10px;
   font-weight: 700;
+  padding-left: 40px;
+}
+
+.headerUserImage {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 20px;
+  top: 5px
+}
+
+.uploadedImg {
+  border-radius: 30px;
 }
 
 .headerNav {
@@ -313,9 +393,18 @@ body {
   max-width: 40%;
 }
 
-.musicCardFavoriteLabel {
-  margin-right: 50px;
-  font-weight: 600;
+.favoriteHeard {
+  margin-right: 30px;
+  width: 20px;
+  height: 20px;
+}
+
+:checked + .favoriteHeard {
+  filter: invert(20%) sepia(88%) saturate(7103%) hue-rotate(359deg) brightness(97%) contrast(119%);
+}
+
+.musicCardFavoriteInput {
+  visibility: hidden;
 }
 
 /* FIM MUSIC CARD */
@@ -328,6 +417,14 @@ body {
 }
 
 /* FIM FAVORITES  */
+
+.profileUserImage {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 50px;
+  right: 80px;
+}
 
 .profileContainer {
   position: relative;
@@ -343,7 +440,7 @@ body {
 .profileInfo {
   position: absolute;
   width: 20vw;
-  top: 40%;
+  top: 45%;
   left: 55px;
 }
 

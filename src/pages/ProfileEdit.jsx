@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 import Header from '../components/Header';
 import Loading from '../components/Loading';
 import { getUser, updateUser } from '../services/userAPI';
@@ -83,12 +84,22 @@ export default class ProfileEdit extends React.Component {
         <Header />
         { loadingState
           ? (
-            <Loading />
+            <div>
+              <br />
+              <Loading />
+            </div>
           )
           : (
             <div data-testid="page-profile-edit">
               <form action="" className="editProfileFormContainer">
-                <img src={ image } alt={ name } className="editProfileImg" />
+                { image
+                  ? (
+                    <img
+                      className="editProfileImg uploadedImg"
+                      src={ image }
+                      alt=" "
+                    />)
+                  : <FaUserCircle className="profileUserImage" /> }
                 <label htmlFor="image">
                   URL da imagem
                   <br />
