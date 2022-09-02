@@ -13,11 +13,11 @@
 
 ### The project
 
-In this project I developed a single page application using React. It is called TrybeTunes and it's users are capable of play songs from the most varied bands and artists, create a list of favorite songs and edit the profile. Some of it's main features are:
+In this project I developed a single page application using React called TrybeTunes. It's users are capable of playing songs from the most varied bands and artists, create a list of favorite songs and edit their profile. Some of it's main features are:
 
 - Login
 - Search for a band or artist
-- List available albums by that band or artist
+- List available albums by band or artist
 - View songs from a selected album
 - Play a preview of the songs on this album
 - Favorite and unfavorite songs
@@ -51,8 +51,8 @@ This project was a opportunity to practice and consolidade my knowledge on React
 
 ### Built with
 
-- React Js
-- CSS
+- HTML, CSS, JS
+- React
 
 
 ## Author
