@@ -19,7 +19,7 @@
 This project is a single page application developed with React called TrybeTunes. It's users are capable of playing songs from the most varied bands and artists, create a list of favorite songs and edit their profile. Information is fetched from the Apple Itunes API.
     <br />
     <br />
-    <a href="https://renatodourad0.github.io/Project_TrybeTunes" target='_blank'>View Demo</a>
+    <a href="https://renatodourad0.github.io/Project_TrybeTunes_Trybe/" target='_blank'>View Demo</a>
   </p>
 </div>
 
